@@ -1,0 +1,63 @@
+const getuserattends =  async () => {
+
+    try {
+    
+       const response = await axios.get(`${process.env.REACT_APP_API_URL}/getuserattends`,{withCredentials:'include'})
+       await setuserattends(response.data)
+       console.log("user attendse is: ", response)
+    
+
+  } catch (error) {
+    console.log("all user data is: ",error)
+    
+  }
+
+
+
+} 
+
+const getallattends =  async () => {
+
+   const date = new Date()
+     const datetosend = getformatdate(date)
+
+  try {
+    
+       const response = await axios.get(`${process.env.REACT_APP_API_URL}/getallattends/?id=${datetosend}`,{withCredentials:'include'})
+       await setallattendes(response.data)
+       console.log("all attendse req is: ", response)
+    
+
+  } catch (error) {
+    console.log("all user data is: ",error)
+  }
+      
+} 
+  
+
+const getMisuserdata = async()=>{ 
+  try {
+    
+       const response = await axios.get(`${process.env.REACT_APP_API_URL}/getalluser`,{withCredentials:'include'})
+       await setMisUsers(response.data)
+       console.log("all user data is: ", response)
+
+  } catch (error) {
+    console.log("all user data is: ",error)
+  }
+
+}
+
+
+const getcuruserprj = async()=>{
+  try {
+    
+       const response = await axios.get(`${process.env.REACT_APP_API_URL}/getproject`,{withCredentials:'include'})
+       await setcurrentuerproject(response.data)
+       console.log("curuserprj is: ", response)
+
+  } catch (error) {
+    console.log("curuserprj is: ",error)
+  }
+  
+}
