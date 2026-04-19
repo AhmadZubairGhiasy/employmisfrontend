@@ -10,3 +10,9 @@ it backend is built with node js express js
 ### `please support me so i can provide more code projects`
 
 
+# Thanks a lot
+
+use  `npm install` to install packages
+use   `npm start` to start the application
+
+
